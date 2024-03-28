@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+
 import java.util.List;
 
 @RestController
@@ -27,7 +27,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addEmployee(@RequestBody Employee employee){
+    public ResponseEntity<?> addEmployee(@RequestBody Employee employee) throws Exception {
         System.out.println("");
         return  new ResponseEntity<Employee>(employeeService.addEmployee(employee), HttpStatus.OK);
     }
