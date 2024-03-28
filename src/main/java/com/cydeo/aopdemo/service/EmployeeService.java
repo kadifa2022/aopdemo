@@ -20,7 +20,9 @@ public class EmployeeService {
         return  employeeRepository.findAll();
     }
 
-    public Employee addEmployee(Employee employee) {
+    public Employee addEmployee(Employee employee) throws Exception {
+        if(employee.getName().length()> 5) // no more than 5 letter
+            throw new Exception("Sorry please reduce your name");
        // System.out.println(" ");
         return employeeRepository.save(employee);
     }
